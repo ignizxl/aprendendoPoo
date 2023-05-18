@@ -151,13 +151,11 @@ public class Lutador {
     
     public void ganharLuta(){
         this.setNumeroDeVitorias(this.getNumeroDeVitorias() + 1);
-        System.out.println("You Winner!");
         
     }
     
     public void perderLuta(){
         this.setNumeroDeDerrotas(this.getNumeroDeDerrotas() + 1);
-        System.out.println("You lose!");
     }
     
     
