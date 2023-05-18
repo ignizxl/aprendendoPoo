@@ -19,7 +19,7 @@ public class Lutador {
     private int numeroDeVitorias;
     private int numeroDeDerrotas;
     private int numeroDeEmpates;
-
+    //construtor 
     public Lutador(String nome, String nacionalidade, int idade, double altura, double peso, int numeroDeVitorias, int numeroDeDerrotas, int numeroDeEmpates) {
         this.setNome(nome);
         this.setNacionalidade(nacionalidade);
@@ -75,7 +75,7 @@ public class Lutador {
     public String getCategoria() {
         return categoria;
     }
-
+    //a categoria será definida de acordo com o peso do lutador 
     public void setCategoria() {
         if(this.getPeso() < 52.2){
             this.categoria = "Inválido";
@@ -161,7 +161,6 @@ public class Lutador {
     
     public void empatarLuta(){
         this.setNumeroDeEmpates(this.getNumeroDeEmpates() + 1);
-        System.out.println("Draw!");
         
     }
 }

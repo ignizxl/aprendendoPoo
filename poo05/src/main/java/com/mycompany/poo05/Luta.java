@@ -4,7 +4,7 @@
  */
 package com.mycompany.poo05;
 
-import static java.lang.Math.random;
+
 import java.util.Random;
 
 /**
@@ -12,11 +12,13 @@ import java.util.Random;
  * @author João Igor
  */
 public class Luta {
+    //atributos 
     private Lutador desafiado;
     private Lutador desafiante;
     private int rounds;
     private boolean aprovada;
     
+   //métodos 
    public void marcarLuta(Lutador desafiado, Lutador desafiante){
        if(desafiado.getCategoria().equals(desafiante.getCategoria()) && desafiado != desafiante){
            this.setAprovada(true);
@@ -47,6 +49,7 @@ public class Luta {
            // 2 = desafiante vence
            
            System.out.println("==========================");
+           System.out.println("======= Resultado ========");
            
            if (resultado == 0){
                System.out.println("Empate!");
@@ -75,7 +78,7 @@ public class Luta {
        }
        
    }
-
+   //métodos de acesso e métodos modificadores 
     public Lutador getDesafiado() {
         return desafiado;
     }
