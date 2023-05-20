@@ -101,7 +101,7 @@ public class Poo05 {
                             break;
                         }
                         else{
-                            System.out.println("Opção inválida!");
+                            System.out.println("Opção inválida! Digite novamente.");
                             System.out.println("Desafiado: ");
                             opcao = ler.nextInt();
                         }
@@ -154,7 +154,7 @@ public class Poo05 {
                             break;
                         }
                         else{
-                            System.out.println("Opção inválida!");
+                            System.out.println("Opção inválida! Digite novamente.");
                             System.out.println("Desafiante: ");
                             opcao = ler.nextInt();
                         }

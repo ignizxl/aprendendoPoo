@@ -56,6 +56,7 @@ public class Luta {
                this.desafiado.empatarLuta();
                this.desafiante.empatarLuta();
                
+               
            }
            
            else if (resultado == 1){
@@ -70,6 +71,11 @@ public class Luta {
                this.desafiante.ganharLuta();
            }
            
+           System.out.println("==========================");
+           System.out.println("Atualizando Cartel: ");
+           this.desafiado.status();
+           System.out.println("--==--==--==--==--==--==--");
+           this.desafiante.status();
            System.out.println("==========================");
        }
        
