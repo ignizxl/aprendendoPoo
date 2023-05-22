@@ -16,14 +16,18 @@ public class Livro implements Publicacao{
     private boolean aberto;
     private Pessoa leitor;
 
+    //método construtor 
     public Livro(String titulo, String autor, int totalDePaginas, Pessoa leitor) {
         this.titulo = titulo;
         this.autor = autor;
         this.totalDePaginas = totalDePaginas;
+        this.paginaAtual = 0;
+        this.aberto = false;
         this.leitor = leitor;
   
     }
-
+    
+    //métodos de acesso e métodos modificadores
     public String getTitulo() {
         return titulo;
     }
@@ -74,29 +78,75 @@ public class Livro implements Publicacao{
 
     @Override
     public void abrir() {
-        this.setAberto(true);
+        if(this.getAberto() == false){
+            System.out.println("Abrindo o livro!");
+            this.setAberto(true);
+        }
+        else{
+            System.out.println("O livro já está aberto!");
+        }
     }
 
     @Override
     public void fechar() {
-        this.setAberto(false);
+        
+        if(this.getAberto() == true){
+            System.out.println("Fechando o livro!");
+            this.setAberto(false);
+        }
+        else{
+            System.out.println("O livro já está fechado!");
+        }
     }
 
     @Override
     public void folhear(int pagina) {
-        this.setPaginaAtual(pagina);
         
-    }
+        if(this.getAberto() == true){
+        
+            if(pagina > this.getTotalDePaginas()) {
+                System.out.println("Erro. Página " + pagina + " não encontrada!");
+            }
+            else{
+                this.setPaginaAtual(pagina);
+                System.out.println("Página atual: " + this.getPaginaAtual());
 
+            }
+        }
+        else{
+            System.out.println("Erro. O livro está fechado! ");
+        }
+    }
     @Override
     public void avancarPagina() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        if (this.getPaginaAtual() >= 0 && this.getPaginaAtual() < this.getTotalDePaginas() && this.getAberto() == true){
+            this.setPaginaAtual(this.getPaginaAtual() + 1);
+            System.out.println("Próxima página");
+        
+        }
+        else{
+            System.out.println("Erro. Página não encontrada! ");
+        }
+    
     }
 
     @Override
     public void voltarPagina() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        if(this.getPaginaAtual() > 0 && this.getPaginaAtual() <= this.getTotalDePaginas() && this.getAberto() == true){
+            this.setPaginaAtual(this.getPaginaAtual() - 1); 
+            System.out.println("Página anterior.");
+        
+        }
+        else{
+            System.out.println("Erro. Página não encontrada! ");
+        }
+        
     }
+
+    public String detalhes() {
+        return '{' + " Sobre o Livro: \n" + " Titulo: " + this.titulo + "\n Autor: " + this.autor + "\n Total de Páginas: " + this.totalDePaginas + "\n Página Atual: " + this.paginaAtual + "\n Aberto: " + this.aberto + "\n Leitor: " + leitor.getNome()  + "\n" + " Idade: " + leitor.getIdade() + "\n" + " Sexo: " + leitor.getSexo()  + '}';
+    }
+    
     
     
 }

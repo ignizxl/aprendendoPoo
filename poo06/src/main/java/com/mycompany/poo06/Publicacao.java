@@ -9,9 +9,10 @@ package com.mycompany.poo06;
  * @author João Igor
  */
 public interface Publicacao {
+    //métodos abstratos 
     public void abrir();
     public void fechar();
-    public void folhear();
+    public void folhear(int pagina);
     public void avancarPagina();
     public void voltarPagina();
     
