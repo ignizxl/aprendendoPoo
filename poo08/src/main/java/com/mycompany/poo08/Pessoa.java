@@ -13,9 +13,10 @@ public abstract class Pessoa {
     private String nome;
     private int idade;
     private String sexo;
-    //método fazer aniversário 
+    //método fazer aniversário é um 'final', ou seja, ele não poderá ser sobrescrito. Eu posso usar o final nas classes também
     public final void fazerAniversario(){
         this.setIdade(this.getIdade() + 1);
+        System.out.println("O " + this.getNome() + " fez aniversário! ");
     }
     //getters e setters 
     public String getNome() {
@@ -36,4 +37,8 @@ public abstract class Pessoa {
     public void setSexo(String sexo) {
         this.sexo = sexo;
     }
+    @Override
+    public String toString() {
+        return "Pessoa{" + "\n nome = " + nome + "\n idade = " + idade + "\n sexo = " + sexo + '}';
+    }  
 }

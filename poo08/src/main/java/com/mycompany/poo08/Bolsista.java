@@ -14,11 +14,11 @@ public class Bolsista extends Aluno {
     
     //método renovar bolsa
     public void renovarBolsa(){
-        //     
+        System.out.println("Renovando a bolsa do aluono " + this.getNome() + "!");     
     }
     //fazendo a sobrescrita do método pagar mensalidade da classe 'Aluno'
     @Override
     public void pagarMensalidade(){
-        
+        System.out.println(this.getNome() + " é bolsista! Pagamento facilitado.");
     }    
 }
