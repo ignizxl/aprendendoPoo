@@ -14,11 +14,10 @@ public class Gafanhoto extends Pessoa {
     private int totalAssistido;
     
     //construtor
-    public Gafanhoto(String nome, int idade, String sexo, String login, int totalAssistido) {
+    public Gafanhoto(String nome, int idade, String sexo, String login) {
         //pegando os valores da classe abstrata Pessoa
         super(nome, idade, sexo);
         this.login = login;
-        this.totalAssistido = 0;
     }
     //get e set 
     public String getLogin() {
@@ -38,10 +37,8 @@ public class Gafanhoto extends Pessoa {
         this.setTotalAssistido(this.getTotalAssistido() + 1);
     }
     //método toString
-
-    @Override
+   @Override
     public String toString() {
         return "Gafanhoto{" + super.toString() + " Login = " + login + "\n Total Assistido = " + totalAssistido + '}';
-    }
-    
+    }  
 }
